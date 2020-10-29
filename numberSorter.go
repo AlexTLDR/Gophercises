@@ -15,15 +15,6 @@ package main
 //   + Maximum 5 numbers can be provided
 //   + If one of the arguments are not a valid number, skip it
 //
-// HINTS
-//  + You can use the bubble-sort algorithm to sort the numbers.
-//    Please watch this: https://youtu.be/nmhjrI-aW5o?t=7
-//
-//  + When swapping the elements, do not check for the last element.
-//
-//    Or, you will receive this error:
-//    "panic: runtime error: index out of range"
-//
 // EXPECTED OUTPUT
 //   go run main.go
 //     Please give me up to 5 numbers.
@@ -58,7 +49,7 @@ func main() {
 
 	var (
 		nums [5]float64
-		)
+	)
 
 
 	for i, v := range args {
@@ -71,15 +62,13 @@ func main() {
 	fmt.Println("Numbers before sorting:",nums)
 
 
-		for i := 0; i < len(nums); i++ {
-			for j := 0; j < len(nums)-1-i; j++ {
-				if nums[j] > nums[j+1] {
-					nums[j], nums[j+1] = nums[j+1], nums[j]
-				}
+	for i := 0; i < len(nums); i++ {
+		for j := 0; j < len(nums)-1-i; j++ {
+			if nums[j] > nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
 			}
 		}
-		fmt.Println("Numbers after sorting:",nums)
+	}
+	fmt.Println("Numbers after sorting:",nums)
 
 }
-
-
