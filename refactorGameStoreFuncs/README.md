@@ -1,0 +1,1 @@
+In this exercise, the previous Game Store exercise is refactored to funcs in 3 steps. In the first step a games.go file is created in which the functions are added and the "games" related actions are handled. The second step is similar but with handling the commands and in the third step the json encoding/decoding was added.
