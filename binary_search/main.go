@@ -17,11 +17,12 @@ func binarySearch(i int, list []int) bool {
 	for low <= high {
 		mid := (low + high) / 2
 		check := list[mid]
-		if check == i {
+		switch {
+		case check == i:
 			return true
-		} else if check > i {
+		case check > i:
 			high = mid - 1
-		} else {
+		default:
 			low = mid + 1
 		}
 	}
