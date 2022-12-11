@@ -3,17 +3,37 @@ package main
 import "fmt"
 
 func main() {
-	list := []int{78, 34, 90, 12, 53, 23, 65, 89, 89, 92, 90}
-	fmt.Println(findSmallest(list))
-	fmt.Println(list)
+	integers := []int{78, 34, 90, 12, 53, 23, 65, 89, 89, 92, 90}
+	strings := []string{"zz", "tt", "yy", "bb", "dd", "aa", "ss", "qq"}
+	selectionSortInts(integers)
+	fmt.Println(integers)
+	selectionSortStrings(strings)
+	fmt.Println(strings)
+
 }
 
-func findSmallest(list []int) int {
-	smallest := list[0]
-	for i := 1; i < len(list); i++ {
-		if smallest > list[i] {
-			smallest = list[i]
+func selectionSortInts(list []int) []int {
+	for i := 0; i < len(list); i++ {
+		minIdx := i
+		for j := i; j < len(list); j++ {
+			if list[j] < list[minIdx] {
+				minIdx = j
+			}
 		}
+		list[i], list[minIdx] = list[minIdx], list[i]
 	}
-	return smallest
+	return list
+}
+
+func selectionSortStrings(list []string) []string {
+	for i := 0; i < len(list); i++ {
+		minIdx := i
+		for j := i; j < len(list); j++ {
+			if list[j] < list[minIdx] {
+				minIdx = j
+			}
+		}
+		list[i], list[minIdx] = list[minIdx], list[i]
+	}
+	return list
 }
