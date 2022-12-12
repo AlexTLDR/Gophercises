@@ -12,6 +12,7 @@ func main() {
 	fmt.Println("Generated list:", list)
 	fmt.Println("Sum:", sum(list))
 	fmt.Println("Count:", count(list))
+	fmt.Println(maxNumber(list))
 }
 
 func sum(list []int) int {
@@ -27,4 +28,24 @@ func count(list []int) int {
 		return 0
 	}
 	return 1 + count(list[1:])
+}
+
+func maxNumber(list []int) int {
+	switch {
+	case len(list) == 0:
+		return 0
+	case len(list) == 1:
+		return list[0]
+	case len(list) == 2:
+		if list[0] > list[1] {
+			return list[0]
+		} else {
+			return list[1]
+		}
+	}
+	subMax := maxNumber(list[1:])
+	if list[0] > subMax {
+		return list[0]
+	}
+	return subMax
 }
