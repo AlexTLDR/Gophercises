@@ -37,9 +37,10 @@ func maxNumber(list []int) int {
 	case len(list) == 1:
 		return list[0]
 	case len(list) == 2:
-		if list[0] > list[1] {
+		switch {
+		case list[0] > list[1]:
 			return list[0]
-		} else {
+		default:
 			return list[1]
 		}
 	}
