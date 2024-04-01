@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/alexTLDR/Gophercises/hellogopher/cmd/hellogopher/stringutils"
+	"github.com/AlexTLDR/Gophercises/dive_in/cmd/hellogopher/stringutils"
 
 	"github.com/jboursiquot/go-proverbs"
 )
